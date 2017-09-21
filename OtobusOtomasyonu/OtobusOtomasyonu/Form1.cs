@@ -16,5 +16,25 @@ namespace OtobusOtomasyonu
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            KoltukDoldur(70, 6);
+        }
+
+        void KoltukDoldur(int koltukSayisi,int sira)
+        {
+            for (int i = 0; i <= koltukSayisi; i++)
+            {
+                Button koltuk = new Button();
+
+                koltuk.Width = 50;
+                koltuk.Height = 50;
+
+                koltuk.Margin = new Padding(0);
+                flowLayoutPanel1.Controls.Add(koltuk); 
+            }
+
+        }
     }
 }
