@@ -82,18 +82,30 @@ namespace OtobusOtomasyonu
 
         private void bayToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            KayitFormu kayitformu = new KayitFormu();
-            kayitformu.ShowDialog();
-            tiklanan.BackColor = Color.Blue;
-            
+            Kirala(Color.Blue);
 
+        }
+
+        private void Kirala(Color renk)
+        {
+            KayitFormu kayitformu = new KayitFormu();
+            DialogResult sonuc = kayitformu.ShowDialog();
+            if (sonuc == DialogResult.OK)
+            {
+                ListViewItem satir = new ListViewItem();
+                satir.Text = tiklanan.Text;
+                satir.SubItems.Add(kayitformu.txtAdi.Text);
+                satir.SubItems.Add(kayitformu.txtSoyad.Text);
+                satir.SubItems.Add(kayitformu.txtTelefon.Text);
+                listView1.Items.Add(satir);
+                tiklanan.BackColor = renk;
+
+            }
         }
 
         private void bayanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            KayitFormu kayitformu = new KayitFormu();
-            kayitformu.ShowDialog();
-            tiklanan.BackColor = Color.Pink;
+            Kirala(Color.Pink);
         }
     }
 }
