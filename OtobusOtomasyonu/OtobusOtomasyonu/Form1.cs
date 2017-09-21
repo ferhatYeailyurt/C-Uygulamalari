@@ -82,11 +82,17 @@ namespace OtobusOtomasyonu
 
         private void bayToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            KayitFormu kayitformu = new KayitFormu();
+            kayitformu.ShowDialog();
             tiklanan.BackColor = Color.Blue;
+            
+
         }
 
         private void bayanToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            KayitFormu kayitformu = new KayitFormu();
+            kayitformu.ShowDialog();
             tiklanan.BackColor = Color.Pink;
         }
     }
