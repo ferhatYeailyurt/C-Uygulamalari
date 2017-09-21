@@ -19,19 +19,24 @@ namespace OtobusOtomasyonu
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            KoltukDoldur(70, 6);
+            KoltukDoldur(60, 7);
         }
 
         void KoltukDoldur(int koltukSayisi,int sira)
         {
-            for (int i = 0; i <= koltukSayisi; i++)
+            for (int i = 1; i <= koltukSayisi; i++)
             {
                 Button koltuk = new Button();
 
-                koltuk.Width = 50;
-                koltuk.Height = 50;
+                koltuk.Width = 40;
+                koltuk.Height = 40;
 
-                koltuk.Margin = new Padding(0);
+                if (i % 4 == 3)
+                    koltuk.Margin = new Padding(40, 0, 0, 0);
+
+                else
+                    koltuk.Margin = new Padding(0);
+         
                 flowLayoutPanel1.Controls.Add(koltuk); 
             }
 
