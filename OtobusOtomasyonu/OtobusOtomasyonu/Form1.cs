@@ -31,7 +31,9 @@ namespace OtobusOtomasyonu
             for (int i = 1; i <= koltukSayisi; i++)
             {
                 Button koltuk = new Button();
-
+                //sağ click özelliği eklendi.
+                koltuk.ContextMenuStrip = contextMenuStrip1;
+                koltuk.MouseDown += Koltuk_MouseDown;
                 koltuk.Width = 40;
                 koltuk.Height = 40;
                 koltuk.Text = i.ToString();
@@ -53,6 +55,12 @@ namespace OtobusOtomasyonu
 
         }
 
+        Button tiklanan;
+        private void Koltuk_MouseDown(object sender, MouseEventArgs e)
+        {
+            tiklanan = (Button)sender;
+        }
+
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch(toolStripComboBox1.SelectedItem.ToString())
@@ -70,6 +78,16 @@ namespace OtobusOtomasyonu
                     KoltukDoldur(54, 8);
                     break;
             }
+        }
+
+        private void bayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tiklanan.BackColor = Color.Blue;
+        }
+
+        private void bayanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tiklanan.BackColor = Color.Pink;
         }
     }
 }
