@@ -30,10 +30,17 @@ namespace OtobusOtomasyonu
 
                 koltuk.Width = 40;
                 koltuk.Height = 40;
+                koltuk.Text = i.ToString();
 
-                if (i % 4 == 3)
+                if (sira * 4 - 2 == i)
+                {
+                    koltuk.Margin = new Padding(0, 0, 120, 0);
+                }
+                else if (i % 4 == 3 && i < (sira - 1) * 4)
                     koltuk.Margin = new Padding(40, 0, 0, 0);
 
+                else if (i % 4 == 1 && i > (sira) * 4)
+                    koltuk.Margin = new Padding(40, 0, 0, 0);
                 else
                     koltuk.Margin = new Padding(0);
          
