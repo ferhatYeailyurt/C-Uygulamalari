@@ -22,8 +22,8 @@ namespace OtobusOtomasyonu
             //koltuk adeti ile orta kapının yerini paremetre olarak gönderdik
             KoltukDoldur(60, 7);
         }
-
-        void KoltukDoldur(int koltukSayisi,int sira)
+        String str;
+        void KoltukDoldur(int koltukSayisi, int sira)
         {
             //formu temizleyip yeniden koltukları sıralamak için.
             flowLayoutPanel1.Controls.Clear();
@@ -37,6 +37,7 @@ namespace OtobusOtomasyonu
                 koltuk.Width = 40;
                 koltuk.Height = 40;
                 koltuk.Text = i.ToString();
+                str = i.ToString();
 
                 if (sira * 4 - 2 == i)
                 {
@@ -49,8 +50,8 @@ namespace OtobusOtomasyonu
                     koltuk.Margin = new Padding(40, 0, 0, 0);
                 else
                     koltuk.Margin = new Padding(0);
-         
-                flowLayoutPanel1.Controls.Add(koltuk); 
+
+                flowLayoutPanel1.Controls.Add(koltuk);
             }
 
         }
@@ -63,13 +64,13 @@ namespace OtobusOtomasyonu
 
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(toolStripComboBox1.SelectedItem.ToString())
+            switch (toolStripComboBox1.SelectedItem.ToString())
             {//sefer saatine göre araç koltuk sayısını ve kapı yerine belirler
                 case "07:00":
                     KoltukDoldur(46, 7);
                     break;
                 case "09:00":
-                     KoltukDoldur(42, 6);
+                    KoltukDoldur(42, 6);
                     break;
                 case "13:00":
                     KoltukDoldur(50, 8);
@@ -93,19 +94,22 @@ namespace OtobusOtomasyonu
             if (sonuc == DialogResult.OK)
             {
                 ListViewItem satir = new ListViewItem();
+
                 satir.Text = tiklanan.Text;
                 satir.SubItems.Add(kayitformu.txtAdi.Text);
                 satir.SubItems.Add(kayitformu.txtSoyad.Text);
                 satir.SubItems.Add(kayitformu.txtTelefon.Text);
+                satir.SubItems.Add(toolStripComboBox1.SelectedItem.ToString());
                 listView1.Items.Add(satir);
                 tiklanan.BackColor = renk;
-
-            }
+                    
         }
-
+    }
         private void bayanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Kirala(Color.Pink);
         }
+
+      
     }
 }

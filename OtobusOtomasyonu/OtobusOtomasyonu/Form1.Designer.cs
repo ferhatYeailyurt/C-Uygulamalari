@@ -44,6 +44,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -106,20 +107,20 @@
             this.bayToolStripMenuItem,
             this.bayanToolStripMenuItem});
             this.rezervasyonToolStripMenuItem.Name = "rezervasyonToolStripMenuItem";
-            this.rezervasyonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rezervasyonToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.rezervasyonToolStripMenuItem.Text = "Rezervasyon";
             // 
             // bayToolStripMenuItem
             // 
             this.bayToolStripMenuItem.Name = "bayToolStripMenuItem";
-            this.bayToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bayToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.bayToolStripMenuItem.Text = "Bay";
             this.bayToolStripMenuItem.Click += new System.EventHandler(this.bayToolStripMenuItem_Click);
             // 
             // bayanToolStripMenuItem
             // 
             this.bayanToolStripMenuItem.Name = "bayanToolStripMenuItem";
-            this.bayanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bayanToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.bayanToolStripMenuItem.Text = "Bayan";
             this.bayanToolStripMenuItem.Click += new System.EventHandler(this.bayanToolStripMenuItem_Click);
             // 
@@ -129,7 +130,8 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(248, 44);
@@ -166,6 +168,10 @@
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Müşteri Listesi";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Sefer";
             // 
             // Form1
             // 
@@ -205,6 +211,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
 
