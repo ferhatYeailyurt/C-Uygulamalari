@@ -12,15 +12,19 @@ namespace OtobusOtomasyonu
 {
     public partial class Form1 : Form
     {
+        SeferBilgisiEkleForm seferform;
         public Form1()
         {
             InitializeComponent();
+            seferform = new SeferBilgisiEkleForm();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             //koltuk adeti ile orta kapının yerini paremetre olarak gönderdik
             KoltukDoldur(60, 7);
+
+            
         }
         String str;
         void KoltukDoldur(int koltukSayisi, int sira)
@@ -112,8 +116,23 @@ namespace OtobusOtomasyonu
 
         private void yeniSeferOluşturToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            SeferBilgisiEkleForm seferform = new SeferBilgisiEkleForm();
-            seferform.ShowDialog();
+            
+           
+            seferEkle();
+            seferform.txtnereden.Clear();
+            seferform.txtnereye.Clear();
+            seferform.txtsefersaati.Clear();
+        }
+
+        public void seferEkle()
+        {
+            
+            DialogResult sonucSeferFormu = seferform.ShowDialog();
+            if (sonucSeferFormu==DialogResult.OK)
+            {
+                ToolStripMenuItem yeni = new ToolStripMenuItem();
+                seferlerToolStripMenuItem.DropDownItems.Add(seferform.txtnereden.Text+ " "+ seferform.txtnereye.Text);
+            }
         }
     }
 }
