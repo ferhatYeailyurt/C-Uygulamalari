@@ -110,6 +110,10 @@ namespace OtobusOtomasyonu
             Kirala(Color.Pink);
         }
 
-      
+        private void yeniSeferOluşturToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SeferBilgisiEkleForm seferform = new SeferBilgisiEkleForm();
+            seferform.ShowDialog();
+        }
     }
 }
