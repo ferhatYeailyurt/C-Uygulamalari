@@ -106,7 +106,8 @@ namespace OtobusOtomasyonu
                 satir.SubItems.Add(toolStripComboBox1.SelectedItem.ToString());
                 listView1.Items.Add(satir);
                 tiklanan.BackColor = renk;
-                    
+                tiklanan.Enabled = false;
+                 
         }
     }
         private void bayanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -119,9 +120,15 @@ namespace OtobusOtomasyonu
             
            
             seferEkle();
+            textBoxTemizle();
+            
+        }
+        public void textBoxTemizle()
+        {
             seferform.txtnereden.Clear();
             seferform.txtnereye.Clear();
             seferform.txtsefersaati.Clear();
+
         }
 
         public void seferEkle()
@@ -131,6 +138,7 @@ namespace OtobusOtomasyonu
             if (sonucSeferFormu==DialogResult.OK)
             {
                 ToolStripMenuItem yeni = new ToolStripMenuItem();
+                ToolStripComboBox saatler = new ToolStripComboBox();
                 seferlerToolStripMenuItem.DropDownItems.Add(seferform.txtnereden.Text+ " "+ seferform.txtnereye.Text);
             }
         }
